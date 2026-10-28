@@ -1,0 +1,19 @@
+services:
+  jee-api:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${API_BIND:-127.0.0.1}:3000:3000"
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+      DATA_FILE: /data/store.json
+      JWT_SECRET: ${JWT_SECRET:?Set a strong JWT_SECRET in your environment}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI:-https://api.example.com/auth/google/callback}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+    volumes:
+      - jee-api-data:/data
+volumes:
+  jee-api-data:

@@ -1,0 +1,13 @@
+# Generated Android artifacts
+.gradle/
+**/build/
+local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Backend state and local configuration
+backend/data/
+backend/.env
+node_modules/

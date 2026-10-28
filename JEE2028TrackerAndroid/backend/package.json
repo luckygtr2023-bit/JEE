@@ -1,0 +1,8 @@
+{
+  "name": "jee2028-tracker-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted authentication and sync API for JEE 2028 Tracker",
+  "scripts": { "start": "node server.js", "test": "node --test" },
+  "engines": { "node": ">=20" }
+}
